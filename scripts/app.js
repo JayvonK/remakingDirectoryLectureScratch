@@ -14,5 +14,14 @@ const GetData = async () => {
     return data;
 }
 
-
+getUserBtn.addEventListener('click', async (event) => {
+    if(run === false){
+        for(let i = 0; i < 15; i++){
+            let data = await GetData();
+            userArr.push(data.first_name + " " + data.last_name);
+        } 
+        userName.textContent = userArr[count];
+        userInput.readOnly = false;
+    }
+})
 
